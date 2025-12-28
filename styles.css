@@ -497,3 +497,110 @@ footer a:hover::after {
     }
 }
 
+.contact-section {
+    margin-top: 20px;
+}
+
+.contact-section p {
+    margin-bottom: 25px;
+    line-height: 1.8;
+    font-size: 1.05em;
+    color: #555;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form .form-group {
+    position: relative;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    outline: none;
+    font-size: 1em;
+    background: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #333;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.contact-form label {
+    position: absolute;
+    left: 16px;
+    top: 14px;
+    font-size: 0.9em;
+    color: #888;
+    pointer-events: none;
+    transition: 0.3s ease all;
+    background: #fff;
+    padding: 0 4px;
+}
+
+.contact-form input:focus + label,
+.contact-form input:not(:placeholder-shown) + label,
+.contact-form textarea:focus + label,
+.contact-form textarea:not(:placeholder-shown) + label {
+    top: -10px;
+    font-size: 0.75em;
+    color: #333;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 14px 25px;
+    border: none;
+    border-radius: 12px;
+    background: #333;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.contact-form button:hover {
+    background: #555;
+    transform: translateY(-2px);
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeUp 0.6s ease forwards;
+}
+
+.contact-form input:nth-child(1) { animation-delay: 0.2s; }
+.contact-form input:nth-child(2) { animation-delay: 0.4s; }
+.contact-form textarea { animation-delay: 0.6s; }
+.contact-form button { animation-delay: 0.8s; }
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        width: 100%;
+    }
+}
+
