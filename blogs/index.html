@@ -55,7 +55,14 @@
 
 <div class="masthead">
   <a href="https://ayaan.is-a.dev/" class="logo">Ayaan Dhalait</a>
-  <nav class="masthead__menu">
+
+  <button class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="masthead__menu" id="navMenu">
     <a href="/">Home</a>
     <a href="/projects/">Projects</a>
     <a href="/blogs/">Blog</a>
@@ -64,7 +71,6 @@
 </div>
 
 <div class="container">
-
 <aside class="sidebar">
   <img src="/Ayaan.jpg" alt="Ayaan Dhalait">
   <h3>Ayaan Dhalait</h3>
@@ -101,8 +107,11 @@
 <p>&copy; 2025 Ayaan Dhalait. All rights reserved.</p>
 </footer>
 
+<script>
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+hamburger.onclick = () => navMenu.classList.toggle("open");
+</script>
+
 </body>
 </html>
-
-
-
