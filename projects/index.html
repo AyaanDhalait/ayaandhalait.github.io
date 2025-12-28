@@ -31,13 +31,21 @@
 
 <div class="masthead">
   <a href="https://ayaan.is-a.dev/" class="logo">Ayaan Dhalait</a>
-  <nav class="masthead__menu">
+
+  <button class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="masthead__menu" id="navMenu">
     <a href="/">Home</a>
     <a href="/projects/">Projects</a>
     <a href="/blogs/">Blog</a>
     <a href="/contact/">Contact</a>
   </nav>
 </div>
+
 <div class="container">
 <aside class="sidebar">
   <img src="/Ayaan.jpg" alt="Ayaan Dhalait">
@@ -54,57 +62,60 @@
   </ul>
 </aside>
 
-  <main class="page">
-    <header><h1>Projects</h1></header>
+<main class="page">
+<header><h1>Projects</h1></header>
 
-    <section class="projects">
+<section class="projects">
 
-      <section class="project">
-        <h2>Fun Day Before Monday</h2>
-        <p>Fun Day Before Monday is an interactive activity generator built with Python and Streamlit. It helps users plan fun and productive activities for the weekend or before the start of the week. The app randomly suggests games, creative tasks, or mini challenges to make the day enjoyable.</p>
-        <p><strong>Features:</strong></p>
-        <ul>
-          <li>Random activity suggestions</li>
-          <li>User-friendly web interface using Streamlit</li>
-          <li>Categories for creativity, outdoor fun, and mental challenges</li>
-        </ul>
-        <p><strong>Tech Used:</strong> Python, Streamlit</p>
-        <nav class="masthead__menu">
-          <a href="https://fundaybeforemonday.streamlit.app/" target="_blank">View Project</a>
-        </nav>
-      </section>
+  <section class="project">
+    <h2>Fun Day Before Monday</h2>
+    <p>Fun Day Before Monday is an interactive activity generator built with Python and Streamlit. It helps users plan fun and productive activities for the weekend or before the start of the week. The app randomly suggests games, creative tasks, or mini challenges to make the day enjoyable.</p>
+    <p><strong>Features:</strong></p>
+    <ul>
+      <li>Random activity suggestions</li>
+      <li>User-friendly web interface using Streamlit</li>
+      <li>Categories for creativity, outdoor fun, and mental challenges</li>
+    </ul>
+    <p><strong>Tech Used:</strong> Python, Streamlit</p>
+    <nav class="masthead__menu">
+      <a href="https://fundaybeforemonday.streamlit.app/" target="_blank">View Project</a>
+    </nav>
+  </section>
 
-      <section class="project">
-        <h2>DHEngine</h2>
-        <p>DHEngine is a lightweight Python game engine built on top of Pygame. It simplifies the process of creating 2D games by providing ready-to-use functions, classes, and tools. Ideal for indie developers or students learning game development.</p>
-        <p><strong>Features:</strong></p>
-        <ul>
-          <li>Easy-to-use game loop and event handling</li>
-          <li>Tile mapping and sprite management</li>
-          <li>Custom physics and collision detection</li>
-          <li>Extensive documentation and examples</li>
-        </ul>
-        <p><strong>Tech Used:</strong> Python, Pygame</p>
-        <nav class="masthead__menu">
-          <a href="https://dhengine.github.io/" target="_blank">Documentation</a>
-          <a href="https://github.com/DHEngine/dhengine" target="_blank">Source Code</a>
-        </nav>
-      </section>
+  <section class="project">
+    <h2>DHEngine</h2>
+    <p>DHEngine is a lightweight Python game engine built on top of Pygame. It simplifies the process of creating 2D games by providing ready-to-use functions, classes, and tools. Ideal for indie developers or students learning game development.</p>
+    <p><strong>Features:</strong></p>
+    <ul>
+      <li>Easy-to-use game loop and event handling</li>
+      <li>Tile mapping and sprite management</li>
+      <li>Custom physics and collision detection</li>
+      <li>Extensive documentation and examples</li>
+    </ul>
+    <p><strong>Tech Used:</strong> Python, Pygame</p>
+    <nav class="masthead__menu">
+      <a href="https://dhengine.github.io/" target="_blank">Documentation</a>
+      <a href="https://github.com/DHEngine/dhengine" target="_blank">Source Code</a>
+    </nav>
+  </section>
 
-      <section class="project">
-        <p><i>More projects coming soon!</i></p>
-      </section>
+  <section class="project">
+    <p><i>More projects coming soon!</i></p>
+  </section>
 
-    </section>
-  </main>
+</section>
+</main>
 </div>
 
 <footer>
   <p>&copy; 2025 Ayaan Dhalait. All rights reserved.</p>
 </footer>
 
+<script>
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+hamburger.onclick = () => navMenu.classList.toggle("open");
+</script>
+
 </body>
 </html>
-
-
-
