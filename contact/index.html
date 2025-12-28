@@ -1,75 +1,39 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact - Ayaan Dhalait</title>
+
+<meta name="description" content="Contact Ayaan Dhalait for software projects, collaborations, or technical inquiries.">
+<meta name="author" content="Ayaan Dhalait">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ayaan.is-a.dev/contact/">
+
 <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
 <link rel="icon" type="image/png" href="../favicon.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<style>
-body {
-  font-family: 'Bai Jamjuree', sans-serif;
-  background: #fff;
-  color: #333;
-  margin: 0;
-  padding: 0;
-}
-.masthead {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background: #f8f8f8;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  animation: float 6s ease-in-out infinite;
-}
-@keyframes float {
-  0%,100%{transform: translateY(0);}
-  50%{transform: translateY(-10px);}
-}
-.masthead .logo { font-weight: 700; text-decoration: none; color: #333; font-size: 1.5rem; }
-.masthead__menu a { margin-left: 20px; text-decoration: none; color: #333; font-weight: 500; transition: 0.3s; }
-.masthead__menu a:hover { color: #ff7f50; }
-.container { display: flex; max-width: 1200px; margin: 40px auto; gap: 40px; padding: 0 20px; }
-.sidebar { flex: 1; text-align: center; }
-.sidebar img { width: 150px; border-radius: 50%; margin-bottom: 15px; animation: pulse 2s infinite alternate; }
-@keyframes pulse { 0%{transform: scale(1);} 50%{transform: scale(1.05);} 100%{transform: scale(1);} }
-.sidebar h3 { margin: 10px 0; }
-.sidebar p { font-size: 0.9rem; color: #666; }
-.sidebar .social-icons { list-style: none; padding: 0; margin: 20px 0 0 0; text-align: left; }
-.sidebar .social-icons li { margin-bottom: 10px; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; }
-.sidebar .social-icons li a { text-decoration: none; color: #333; transition: 0.3s; }
-.sidebar .social-icons li a:hover { color: #ff7f50; }
-.page { flex: 2; }
-.page header h1 { font-size: 2rem; margin-bottom: 15px; }
-.contact-section p { margin-bottom: 20px; }
-.contact-form { display: flex; flex-direction: column; gap: 20px; }
-.contact-form .form-group { position: relative; }
-.contact-form input, .contact-form textarea { width: 100%; padding: 15px; border-radius: 12px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: all 0.3s ease; background: #fff; animation: pulse 2s infinite alternate; }
-.contact-form input:focus, .contact-form textarea:focus { border-color: #333; box-shadow: 0 0 10px rgba(0,0,0,0.1); transform: scale(1.02); }
-.contact-form textarea { resize: vertical; min-height: 120px; }
-.contact-form label { position: absolute; top: 50%; left: 15px; transform: translateY(-50%); background: #fff; padding: 0 5px; color: #999; font-size: 0.95rem; pointer-events: none; transition: all 0.3s ease; }
-.contact-form input:focus + label, .contact-form input:not(:placeholder-shown) + label, .contact-form textarea:focus + label, .contact-form textarea:not(:placeholder-shown) + label { top: -10px; left: 10px; font-size: 0.8rem; color: #333; }
-.contact-form textarea::placeholder { text-align: left; vertical-align: top; color: #aaa; padding-top: 5px; }
-.contact-form button { padding: 15px 25px; border-radius: 12px; border: none; background: #333; color: #fff; font-weight: 600; cursor: pointer; transition: all 0.3s ease; align-self: flex-start; animation: bounce 2s infinite; }
-.contact-form button:hover { background: #555; transform: translateY(-2px) scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-@keyframes bounce { 0%,100%{transform: translateY(0);} 50%{transform: translateY(-8px);} }
-footer { text-align: center; margin: 40px 0; color: #666; font-size: 0.9rem; }
-</style>
 </head>
 <body>
+
 <div class="masthead">
   <a href="../index.html" class="logo">Ayaan Dhalait</a>
-  <nav class="masthead__menu">
+
+  <button class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="masthead__menu" id="navMenu">
     <a href="../index.html">Home</a>
     <a href="../projects/">Projects</a>
     <a href="../blogs/">Blog</a>
     <a href="../contact/">Contact</a>
   </nav>
 </div>
+
 <div class="container">
 <aside class="sidebar">
   <img src="/Ayaan.jpg" alt="Ayaan Dhalait">
@@ -85,6 +49,7 @@ footer { text-align: center; margin: 40px 0; color: #666; font-size: 0.9rem; }
     <li><a href="mailto:mr.dhalait@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
   </ul>
 </aside>
+
 <main class="page">
   <header>
     <h1>Contact Me</h1>
@@ -109,8 +74,16 @@ footer { text-align: center; margin: 40px 0; color: #666; font-size: 0.9rem; }
   </section>
 </main>
 </div>
+
 <footer>
   <p>&copy; 2025 Ayaan Dhalait. All rights reserved.</p>
 </footer>
+
+<script>
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+hamburger.onclick = () => navMenu.classList.toggle("open");
+</script>
+
 </body>
 </html>
