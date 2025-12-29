@@ -107,11 +107,16 @@
 <p>&copy; 2025 Ayaan Dhalait. All rights reserved.</p>
 </footer>
 
+
 <script>
-const hamburger = document.getElementById("hamburger");
-const navMenu = document.getElementById("navMenu");
-hamburger.onclick = () => navMenu.classList.toggle("open");
+const hamburger = document.getElementById("hamburger")
+const navMenu = document.getElementById("navMenu")
+hamburger.onclick = () => {
+    hamburger.classList.toggle("active")
+    navMenu.classList.toggle("active")
+}
 </script>
 
 </body>
 </html>
+
