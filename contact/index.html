@@ -5,50 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Ayaan Dhalait</title>
 
-<meta name="description" content="Contact Ayaan Dhalait — software developer and CTO of the Student Initiative Board. Reach out via email, LinkedIn, or GitHub.">
+<meta name="description" content="Contact Ayaan Dhalait for collaboration, projects, or technical discussions.">
 <meta name="author" content="Ayaan Dhalait">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://ayaandhalait.github.io/contact/">
 
 <meta property="og:title" content="Contact | Ayaan Dhalait">
-<meta property="og:description" content="Get in touch with Ayaan Dhalait for coding, projects, or tech collaboration.">
+<meta property="og:description" content="Get in touch with Ayaan Dhalait.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ayaandhalait.github.io/contact/">
 <meta property="og:image" content="https://ayaandhalait.github.io/Ayaan.jpg">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contact | Ayaan Dhalait">
-<meta name="twitter:description" content="Contact Ayaan Dhalait — developer, CTO, and tech enthusiast.">
+<meta name="twitter:description" content="Get in touch with Ayaan Dhalait.">
 <meta name="twitter:image" content="https://ayaandhalait.github.io/Ayaan.jpg">
 
 <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
 <link rel="icon" href="../favicon.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "name": "Contact Ayaan Dhalait",
-  "url": "https://ayaandhalait.github.io/contact/",
-  "about": {
-    "@type": "Person",
-    "name": "Ayaan Dhalait",
-    "url": "https://ayaandhalait.github.io/",
-    "sameAs": [
-      "https://www.wikidata.org/wiki/Q137387342",
-      "https://github.com/AyaanDhalait",
-      "https://scholar.google.com/citations?hl=en&user=80ufeIEAAAAJ",
-      "https://ayaandhalait.itch.io/",
-      "https://www.instagram.com/ayaandhalait/",
-      "https://www.linkedin.com/in/ayaan-dhalait/",
-      "https://www.youtube.com/@AyaanDhalait",
-      "https://x.com/AyaanDhalait"
-    ]
-  }
-}
-</script>
 </head>
 
 <body>
@@ -65,44 +41,106 @@
 
 <div class="container">
 
-  <aside class="sidebar">
-    <img src="../Ayaan.jpg" alt="Ayaan Dhalait">
-    <h3>Ayaan Dhalait</h3>
-    <p>Software developer, CTO of the Student Initiative Board</p>
+<aside class="sidebar">
+  <img src="../Ayaan.jpg" alt="Ayaan Dhalait">
+  <h3>Ayaan Dhalait</h3>
+  <p>Software developer and CTO of the Student Initiative Board</p>
 
-    <ul class="social-icons">
-      <li><a href="https://github.com/AyaanDhalait"><i class="fab fa-github"></i> GitHub</a></li>
-      <li><a href="https://scholar.google.com/citations?hl=en&user=80ufeIEAAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a></li>
-      <li><a href="https://ayaandhalait.itch.io/"><i class="fab fa-itch-io"></i> Itch.io</a></li>
-      <li><a href="https://www.linkedin.com/in/ayaan-dhalait/"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-      <li><a href="mailto:mr.dhalait@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
-    </ul>
-  </aside>
+  <ul class="social-icons">
+    <li><a href="https://github.com/AyaanDhalait"><i class="fab fa-github"></i> GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/ayaan-dhalait/"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+    <li><a href="mailto:mr.dhalait@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+  </ul>
+</aside>
 
-  <main class="page">
-    <header>
-      <h1>Contact</h1>
-    </header>
+<main class="page">
+<header>
+<h1>Contact</h1>
+</header>
 
-    <section class="page__content">
-      <p>
-        If you’d like to get in touch, feel free to reach out through any of the platforms below.
-        I’m always happy to talk about coding, games, research, or tech experiments.
-      </p>
+<section class="page__content">
 
-      <ul>
-        <li><a href="mailto:mr.dhalait@gmail.com">Email</a></li>
-        <li><a href="https://www.linkedin.com/in/ayaan-dhalait/">LinkedIn</a></li>
-        <li><a href="https://github.com/AyaanDhalait">GitHub</a></li>
-      </ul>
-    </section>
-  </main>
+<p>
+If you would like to get in touch, use the form below.
+I am open to discussions about projects, collaboration, or technology.
+</p>
+
+<form action="https://formspree.io/f/mwvejwkr" method="POST" class="contact-form">
+
+  <div class="input-group">
+    <input type="text" name="name" id="name" required>
+    <label for="name">Your Name</label>
+  </div>
+
+  <div class="input-group">
+    <input type="email" name="email" id="email" required>
+    <label for="email">Your Email</label>
+  </div>
+
+  <div class="input-group">
+    <input type="text" name="subject" id="subject" required>
+    <label for="subject">Subject</label>
+  </div>
+
+  <div class="input-group">
+    <textarea name="message" id="message" rows="5" required></textarea>
+    <label for="message">Your Message</label>
+  </div>
+
+  <p class="form-status" aria-live="polite"></p>
+
+  <button type="submit" class="send-btn">Send Message</button>
+
+</form>
+
+</section>
+</main>
 
 </div>
 
 <footer>
-  <p>&copy; 2025 Ayaan Dhalait. All rights reserved.</p>
+<p>&copy; 2025 Ayaan Dhalait. All rights reserved.</p>
 </footer>
+
+<script>
+const form = document.querySelector(".contact-form");
+const statusText = document.querySelector(".form-status");
+const button = document.querySelector(".send-btn");
+
+form.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  button.disabled = true;
+  button.textContent = "Sending...";
+  statusText.textContent = "";
+  statusText.className = "form-status";
+
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { "Accept": "application/json" }
+    });
+
+    if (response.ok) {
+      form.reset();
+      statusText.textContent = "Message sent successfully. I will get back to you soon.";
+      statusText.classList.add("success");
+    } else {
+      statusText.textContent = "Something went wrong. Please try again.";
+      statusText.classList.add("error");
+    }
+  } catch {
+    statusText.textContent = "Network error. Please try again later.";
+    statusText.classList.add("error");
+  }
+
+  button.disabled = false;
+  button.textContent = "Send Message";
+});
+</script>
 
 </body>
 </html>
