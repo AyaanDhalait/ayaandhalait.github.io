@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayaan Dhalait</title>
+
+<meta name="description" content="Ayaan Dhalait is a software developer, researcher, and CTO of the Student Initiative Board. Passionate about AI, game development, and advanced computing.">
+<meta name="author" content="Ayaan Dhalait">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ayaandhalait.github.io/">
+
+<meta property="og:title" content="Ayaan Dhalait">
+<meta property="og:description" content="Young software developer, researcher, and CTO of the Student Initiative Board.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://ayaandhalait.github.io/">
+<meta property="og:image" content="https://ayaandhalait.github.io/Ayaan.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ayaan Dhalait">
+<meta name="twitter:description" content="Young software developer, CTO, and researcher exploring advanced technologies.">
+<meta name="twitter:image" content="https://ayaandhalait.github.io/Ayaan.jpg">
+
+<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ayaan Dhalait",
+  "image": "https://ayaandhalait.github.io/Ayaan.jpg",
+  "url": "https://ayaandhalait.github.io/",
+  "sameAs": [
+    "https://www.wikidata.org/wiki/Q137387342",
+    "https://github.com/AyaanDhalait",
+    "https://scholar.google.com/citations?hl=en&user=80ufeIEAAAAJ",
+    "https://ayaandhalait.itch.io/",
+    "https://www.instagram.com/ayaandhalait/",
+    "https://www.linkedin.com/in/ayaan-dhalait/",
+    "https://www.youtube.com/@AyaanDhalait",
+    "https://x.com/AyaanDhalait"
+  ],
+  "jobTitle": "Software Developer, CTO",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Student Initiative Board"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Pune",
+    "addressRegion": "Maharashtra",
+    "addressCountry": "IN"
+  }
+}
+</script>
+</head>
+
+<body>
+
+<div class="masthead">
+  <a href="https://ayaan.is-a.dev/" class="logo">Ayaan Dhalait</a>
+  <nav class="masthead__menu">
+    <a href="https://ayaan.is-a.dev/">Home</a>
+    <a href="projects/">Projects</a>
+    <a href="blogs/">Blog</a>
+    <a href="contact/">Contact</a>
+  </nav>
+</div>
+
+<div class="container">
+
+<aside class="sidebar">
+  <img src="Ayaan.jpg" alt="Ayaan Dhalait">
+  <h3>Ayaan Dhalait</h3>
+  <p>Software developer, CTO of the Student Initiative Board</p>
+  <p id="years-counter" class="age-counter"></p>
+  <ul class="social-icons">
+    <li><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</li>
+    <li><a href="https://github.com/AyaanDhalait"><i class="fab fa-github"></i> GitHub</a></li>
+    <li><a href="https://scholar.google.com/citations?hl=en&user=80ufeIEAAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a></li>
+    <li><a href="https://ayaandhalait.itch.io/"><i class="fab fa-itch-io"></i> Itch.io</a></li>
+    <li><a href="https://www.instagram.com/ayaandhalait/"><i class="fab fa-instagram"></i> Instagram</a></li>
+    <li><a href="https://www.linkedin.com/in/ayaan-dhalait/"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+    <li><a href="mailto:mr.dhalait@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+  </ul>
+</aside>
+
+<main class="page">
+<header>
+<h1>About Me</h1>
+</header>
+
+<section class="page__content">
+<p>Hey! I’m Ayaan, a developer who has been fascinated by technology since I got my first PC at a young age. My journey began with simple experiments and curiosity-driven learning and quickly evolved into building real projects.</p>
+
+<p>I started with Scratch and Code.org, moved into web development, explored game engines, and eventually specialized in Python and full-stack development.</p>
+
+<p>Being the CTO of the Student Initiative Board has helped me grow as a leader, problem solver, and mentor to other students.</p>
+
+<p>I am passionate about artificial intelligence, advanced computing, and creating software that makes a real-world impact.</p>
+
+<p>Looking ahead, I plan to continue learning, building, and pushing my limits as a developer.</p>
+</section>
+</main>
+
+</div>
+
+<footer>
+<p>&copy; 2025 Ayaan Dhalait. All rights reserved.</p>
+</footer>
+
+<script>
+const birthDate=new Date("2012-08-30T00:00:00");
+
+function AgeCounter(){
+  const now=new Date();
+  let years=now.getFullYear()-birthDate.getFullYear();
+  let lastBirthday=new Date(now.getFullYear(),birthDate.getMonth(),birthDate.getDate());
+  if(now<lastBirthday){
+    years--;
+    lastBirthday=new Date(now.getFullYear()-1,birthDate.getMonth(),birthDate.getDate());
+  }
+  let months=now.getMonth()-birthDate.getMonth();
+  if(now.getDate()<birthDate.getDate()) months--;
+  if(months<0) months+=12;
+  const el=document.getElementById("years-counter");
+  if(el){
+    el.textContent="I am "+years+"."+String(months+1)+" years old";
+  }
+}
+
+AgeCounter();
+setInterval(AgeCounter,60000);
+</script>>
+
+</body>
+</html>
