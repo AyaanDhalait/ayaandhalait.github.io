@@ -353,3 +353,110 @@ footer .social-icons li
   font-size: 1rem;
 }
 
+.contact-form {
+  max-width: 520px;
+  margin-top: 30px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 14px 12px;
+  font-family: inherit;
+  font-size: 15px;
+  border: 1.5px solid #d0d0d0;
+  border-radius: 10px;
+  background: transparent;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #000;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.08);
+}
+
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #777;
+  pointer-events: none;
+  background: #fff;
+  padding: 0 6px;
+  transition: 0.25s ease;
+}
+
+.input-group textarea + label {
+  top: 18px;
+  transform: none;
+}
+
+.input-group input:focus + label,
+.input-group textarea:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:not(:placeholder-shown) + label {
+  top: -8px;
+  font-size: 12px;
+  color: #000;
+}
+
+.send-btn {
+  margin-top: 12px;
+  padding: 12px 28px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.send-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+}
+
+.send-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-status {
+  margin-top: 6px;
+  font-size: 14px;
+  min-height: 18px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.form-status.success {
+  color: #0a7d3b;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-status.error {
+  color: #b00020;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .contact-form {
+    max-width: 100%;
+  }
+}
+
