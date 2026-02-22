@@ -1,343 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ayaan Dhalait | Developer</title>
-<meta name="description" content="Ayaan Dhalait is a software developer, researcher, and CTO of the Student Initiative Board. Passionate about AI, game development, and advanced computing.">
-<meta name="author" content="Ayaan Dhalait">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://ayaandhalait.github.io/">
-
-<meta property="og:title" content="Ayaan Dhalait">
-<meta property="og:description" content="Young software developer, researcher, and CTO of the Student Initiative Board.">
-<meta property="og:type" content="profile">
-<meta property="og:url" content="https://ayaandhalait.github.io/">
-<meta property="og:image" content="https://ayaandhalait.github.io/Ayaan.jpg">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ayaan Dhalait">
-<meta name="twitter:description" content="Young software developer, CTO, and researcher exploring advanced technologies.">
-<meta name="twitter:image" content="https://ayaandhalait.github.io/Ayaan.jpg">
-
-<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<link rel="icon" type="image/png" href="../favicon.png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Ayaan Dhalait",
-  "image": "https://ayaandhalait.github.io/Ayaan.jpg",
-  "url": "https://ayaandhalait.github.io/",
-  "sameAs": [
-    "https://www.wikidata.org/wiki/Q137387342",
-    "https://github.com/AyaanDhalait",
-    "https://scholar.google.com/citations?hl=en&user=80ufeIEAAAAJ",
-    "https://ayaandhalait.itch.io/",
-    "https://www.instagram.com/ayaandhalait/",
-    "https://www.linkedin.com/in/ayaan-dhalait/",
-    "https://www.youtube.com/@AyaanDhalait",
-    "https://x.com/AyaanDhalait"
-  ],
-  "jobTitle": "Software Developer, CTO",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Student Initiative Board"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Pune",
-    "addressRegion": "Maharashtra",
-    "addressCountry": "IN"
-  }
-}
-</script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#0f0f14;
-  --card:#17171f;
-  --red:#ff2e63;
-  --blue:#08d9d6;
-  --text:#eaeaea;
-}
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:"Space Grotesk",sans-serif;
-}
-body{
-  background:var(--bg);
-  color:var(--text);
-  overflow-x:hidden;
-  scroll-behavior:smooth;
-}
-body::after{
-  content:"";
-  position:fixed;
-  width:800px;
-  height:800px;
-  background:radial-gradient(circle, rgba(255,46,99,0.15), transparent 60%);
-  top:-200px;
-  left:-200px;
-  animation:moveGlow 15s infinite alternate ease-in-out;
-  z-index:-1;
-}
-@keyframes moveGlow{
-  0%{transform:translate(0,0);}
-  100%{transform:translate(400px,300px);}
-}
-nav{
-  position:fixed;
-  width:100%;
-  padding:25px 10%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:rgba(15,15,20,0.7);
-  backdrop-filter:blur(12px);
-  z-index:1000;
-}
-.logo{
-  font-size:1.8rem;
-  font-weight:700;
-  letter-spacing:1.5px;
-  text-decoration:none;
-  position:relative;
-  background:linear-gradient(90deg,var(--red),var(--blue));
-  background-size:200% 200%;
-  background-position:0% 50%;
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:white;
-  transition:background-position 0.6s ease, -webkit-text-fill-color 0.6s ease;
-}
-.logo:hover{
-  -webkit-text-fill-color:transparent;
-  background-position:100% 50%;
-}
-nav ul{
-  display:flex;
-  gap:40px;
-  list-style:none;
-}
-nav a{
-  text-decoration:none;
-  color:#aaa;
-  font-size:0.9rem;
-  transition:0.3s;
-}
-nav a:hover{
-  color:white;
-}
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:120px 10%;
-}
-.hero-content{
-  display:flex;
-  align-items:center;
-  gap:80px;
-  max-width:1200px;
-  width:100%;
-}
-.profile{
-  width:280px;
-  height:280px;
-  border-radius:50%;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.profile img{
-  width:92%;
-  height:92%;
-  border-radius:50%;
-  object-fit:cover;
-  z-index:2;
-  position:relative;
-}
-.profile::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:50%;
-  padding:6px;
-  background:linear-gradient(45deg,var(--red),var(--blue),var(--red));
-  background-size:300% 300%;
-  animation:gradientShift 6s linear infinite;
-  z-index:1;
-  transition:transform 0.8s ease;
-}
-.profile::after{
-  content:"";
-  position:absolute;
-  inset:6px;
-  border-radius:50%;
-  background:var(--bg);
-  z-index:1;
-}
-.profile:hover::before{
-  transform:rotate(360deg);
-}
-@keyframes gradientShift{
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
-}
-.hero-text h1{
-  font-size:3.5rem;
-  font-weight:700;
-  line-height:1.2;
-}
-.gradient-text{
-  background:linear-gradient(90deg,var(--red),var(--blue));
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-.hero-text p{
-  margin-top:25px;
-  font-size:1.2rem;
-  color:#aaa;
-  max-width:500px;
-}
-.btn{
-  margin-top:40px;
-  display:inline-block;
-  padding:14px 40px;
-  border-radius:40px;
-  background:linear-gradient(90deg,var(--red),var(--blue));
-  text-decoration:none;
-  color:white;
-  font-weight:600;
-  transition:0.3s ease;
-}
-.btn:hover{
-  transform:translateY(-4px);
-  box-shadow:0 10px 30px rgba(255,46,99,0.3);
-}
-section{
-  padding:120px 10%;
-  max-width:1200px;
-  margin:auto;
-}
-.card{
-  background:var(--card);
-  padding:60px;
-  border-radius:30px;
-  transition:0.4s ease;
-}
-.card:hover{
-  transform:translateY(-10px);
-}
-.project-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-  margin-top:40px;
-}
-.project{
-  background:#1d1d27;
-  padding:30px;
-  border-radius:20px;
-  transition:0.3s ease;
-}
-.project:hover{
-  transform:translateY(-6px);
-}
-.project h3{
-  margin-bottom:15px;
-}
-.project p{
-  color:#aaa;
-  font-size:0.95rem;
-}
-.project a{
-  display:inline-block;
-  margin-top:12px;
-  padding:8px 14px;
-  border-radius:25px;
-  background:linear-gradient(90deg,var(--red),var(--blue));
-  color:white;
-  text-decoration:none;
-  font-size:0.9rem;
-  font-weight:600;
-}
-footer{
-  text-align:center;
-  padding:60px;
-  color:#666;
-  font-size:0.9rem;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Ayaan Dhalait | Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/lucide-static@latest/font/lucide.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<nav>
-  <a href="#home" class="logo">Ayaan Dhalait</a>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-<div class="hero" id="home">
-  <div class="hero-content">
+
+<section class="hero">
+  <div class="container">
     <div class="profile">
       <img src="Ayaan.jpg" alt="Ayaan Dhalait">
     </div>
-    <div class="hero-text">
-      <h1>Hi, I'm <span class="gradient-text">Ayaan Dhalait</span></h1>
-      <p>Full-Stack Developer building modern web systems and interactive experiences.</p>
-      <a href="#about" class="btn">Discover More</a>
+
+    <div class="content">
+      <h1>Ayaan Dhalait</h1>
+      <h2>Student • Indie Developer • CTO @ SIB</h2>
+
+      <p>
+        I build software, games, and platforms with a focus on clean design,
+        scalability, and experimentation. I mainly work with Python, full-stack
+        development, and game development.
+      </p>
+
+      <div class="buttons">
+        <a href="/projects/" class="btn primary">View Projects</a>
+        <a href="/contact/" class="btn secondary">Contact Me</a>
+      </div>
+
+      <div class="socials">
+        <a href="#"><i class="lucide lucide-github"></i></a>
+        <a href="#"><i class="lucide lucide-linkedin"></i></a>
+        <a href="#"><i class="lucide lucide-mail"></i></a>
+      </div>
     </div>
-  </div>
-</div>
-<section id="about">
-  <div class="card">
-    <h2 class="gradient-text">About Me</h2>
-    <p style="margin-top:20px; color:#aaa; line-height:1.7;">
-      I make stuff and climb stuff and code stuff and cook stuff and burn stuff and freeze stuff and electrocute stuff and break stuff and fix stuff :D
-    </p>
   </div>
 </section>
-<section id="work">
-  <div class="card">
-    <h2 class="gradient-text">Projects</h2>
-    <div class="project-grid">
-      <div class="project">
-        <h3>Fun Day Before Monday</h3>
-        <p>A Python app that suggests fun activities when bored, built with interactive logic systems.</p>
-        <a href="https://github.com/AyaanDhalait/Fun-Day-Before-Monday" target="_blank">View Project</a>
-      </div>
-      <div class="project">
-        <h3>DHEngine</h3>
-        <p>A lightweight Python game engine using Pygame with sprite systems and modular architecture.</p>
-        <a href="https://dhengine.github.io" target="_blank">View Project</a>
-      </div>
-    </div>
-  </div>
-<footer>
-  © 2026-Present Ayaan Dhalait. All Rights Reserved
-</footer>
-<script>
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-  anchor.addEventListener('click',function(e){
-    e.preventDefault()
-    const target=document.querySelector(this.getAttribute('href'))
-    window.scrollTo({
-      top:target.offsetTop-80,
-      behavior:'smooth'
-    })
-  })
-})
-</script>
-</body>
 
+</body>
 </html>
