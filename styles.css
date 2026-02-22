@@ -25,26 +25,46 @@ section {
 .container {
   max-width: 1000px;
   width: 100%;
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
   gap: 60px;
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .profile {
-  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile img {
-  width: 230px;
-  height: 230px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid rgba(255,255,255,0.15);
   box-shadow: 0 0 60px rgba(255,255,255,0.15);
+  animation: float 4s ease-in-out infinite;
 }
 
-.content {
-  flex: 1;
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 h1 {
@@ -117,44 +137,6 @@ p {
   transform: translateY(-3px);
 }
 
-.skills {
-  background: linear-gradient(to bottom, #000, #080808);
-}
-
-.skills-wrapper {
-  max-width: 800px;
-  margin: auto;
-}
-
-.skill {
-  margin-bottom: 30px;
-}
-
-.skill-top {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-.skill-top span:last-child {
-  color: #aaa;
-}
-
-.skill-bar {
-  height: 20px;
-  width: 100%;
-  background: rgba(255,255,255,0.08);
-  border-radius: 100px;
-  overflow: hidden;
-}
-
-.skill-fill {
-  height: 100%;
-  background: white;
-  border-radius: 100px;
-}
-
 .projects {
   background: linear-gradient(to bottom, #000, #080808);
 }
@@ -212,19 +194,46 @@ p {
   background: rgba(255,255,255,0.08);
 }
 
+.home-link {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  animation: slideIn 0.8s ease forwards;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.home-link:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateX(-4px);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @media (max-width: 800px) {
   .container {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     text-align: center;
   }
 
   .buttons,
   .socials {
     justify-content: center;
-  }
-
-  .profile img {
-    width: 180px;
-    height: 180px;
   }
 }
