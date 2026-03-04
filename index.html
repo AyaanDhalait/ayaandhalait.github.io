@@ -1,126 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ayaan Dhalait</title>
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Ayaan | Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="hero">
-<h1 class="massive">
-<span>Ayaan</span>
-<span>Dhalait</span>
-</h1>
-<div class="scroll-indicator">SCROLL</div>
-</div>
+<div class="container">
 
-<section>
-<div class="statement reveal">
-<span>I DON’T BUILD WEBSITES.</span>
-<span>I BUILD SYSTEMS.</span>
-<span>I CONTROL STRUCTURE.</span>
-</div>
-</section>
+    <header class="hero">
+        <div class="name">Ayaan Dhalait</div>
+        <h1>
+            I build systems.<br>
+            I ship projects.<br>
+            I improve every time.
+        </h1>
+        <p class="sub">
+            Student developer focused on games, performance, and clean execution.
+        </p>
+        <a href="/projects/" class="cta">See my projects</a>
+    </header>
 
-<section>
-<div class="split">
-<div>
-<h2 class="reveal">Built With Intent</h2>
-</div>
-<div>
-<p class="reveal">
-Everything starts with logic. Break it down. Rebuild it stronger.
-Design is not decoration. It is architecture.
-</p>
-</div>
-</div>
-</section>
+    <section class="intro">
+        <p>
+            I enjoy building interactive systems and experimenting with ideas until they actually work.
+            I care about finishing projects properly and writing code that improves over time.
+        </p>
+    </section>
 
-<section>
-<div class="projects">
+    <section>
+        <h2>What I Do</h2>
+        <ul>
+            <li>Game development with Python and Pygame</li>
+            <li>Full stack web projects</li>
+            <li>Interactive experiments</li>
+            <li>Clean and focused interfaces</li>
+        </ul>
+    </section>
 
-<div class="project-block project-right reveal">
-<div>
-<div class="project-title">Engine Architecture</div>
-<p class="project-desc">
-Rendering logic. Performance control. Clean structural flow.
-I build foundations first, visuals second.
-</p>
-</div>
-<div></div>
-<div class="project-number">01</div>
-</div>
+    <section>
+        <h2>Now</h2>
+        <p>
+            Improving performance in my projects.
+            Learning deeper system design.
+            Building things that feel complete instead of rushed.
+        </p>
+    </section>
 
-<div class="project-block project-left reveal">
-<div></div>
-<div>
-<div class="project-title">Interactive Systems</div>
-<p class="project-desc">
-Interfaces treated like software systems, not static layouts.
-Every interaction has purpose. Nothing random.
-</p>
-</div>
-<div class="project-number">02</div>
-</div>
-
-<div class="project-block project-right reveal">
-<div>
-<div class="project-title">Experimental Builds</div>
-<p class="project-desc">
-Testing limits. Stressing engines. Exploring mechanics.
-If it breaks, I learn. If it works, I refine.
-</p>
-</div>
-<div></div>
-<div class="project-number">03</div>
-</div>
+    <section>
+        <h2>Philosophy</h2>
+        <p>
+            Progress beats perfection. Build it. Improve it. Repeat.
+        </p>
+    </section>
+    <section>
+        <h2>Contact</h2>
+        <p>mr.dhalait@gmail.com</p>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <p>© 2026 Ayaan Dhalait. All Rights Reserved.  </p>
+        </div>
+    </footer>
 
 </div>
-</section>
-
-<section class="fullscreen">
-<div>
-<h2 class="reveal">CONTROL<br>EVERYTHING</h2>
-<p class="reveal">
-From idea to execution.
-No templates. No shortcuts.
-</p>
-</div>
-</section>
-
-<footer>
-<h2>Let’s Build Something Unreal</h2>
-<p>mr.dhalait@gmail.com</p>
-<p>© 2026 Ayaan Dhalait. All Rights Reserved.</p>
-</footer>
-
-<script>
-const massive=document.querySelector(".massive")
-document.addEventListener("mousemove",e=>{
-let x=(e.clientX/window.innerWidth-.5)*30
-let y=(e.clientY/window.innerHeight-.5)*30
-massive.style.transform=`rotateX(${y}deg) rotateY(${x}deg)`
-})
-
-const reveals=document.querySelectorAll(".reveal")
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting)entry.target.classList.add("show")
-})
-},{threshold:.3})
-reveals.forEach(el=>observer.observe(el))
-
-let lastScroll=0
-window.addEventListener("scroll",()=>{
-let current=window.scrollY
-let velocity=current-lastScroll
-document.body.style.background=`rgb(${10+Math.min(Math.abs(velocity)*2,40)},10,10)`
-lastScroll=current
-})
-</script>
 
 </body>
 </html>
