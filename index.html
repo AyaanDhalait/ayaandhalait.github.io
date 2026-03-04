@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayaan | Terminal</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#070b10;
+--panel:#0e141b;
+--accent:#ff751f;
+--accent-soft:#ff9a4d;
+--text:#e6edf3;
+--muted:#5c6b7a;
+--glow:rgba(255,117,31,.35);
+}
+.light{
+--bg:#f3f6fa;
+--panel:#ffffff;
+--accent:#ff751f;
+--accent-soft:#ff8c3a;
+--text:#0d1117;
+--muted:#6b7280;
+--glow:rgba(255,117,31,.2);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+background:var(--bg);
+font-family:"JetBrains Mono",monospace;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+color:var(--text);
+overflow:hidden;
+}
+.terminal{
+width:95%;
+max-width:1100px;
+height:90vh;
+background:rgba(15,20,27,.9);
+backdrop-filter:blur(20px);
+border-radius:22px;
+box-shadow:0 0 80px var(--glow);
+display:flex;
+flex-direction:column;
+overflow:hidden;
+border:1px solid rgba(255,255,255,.05);
+}
+.topbar{
+display:flex;
+justify-content:space-between;
+padding:16px 22px;
+border-bottom:1px solid rgba(255,255,255,.05);
+font-size:14px;
+color:var(--muted);
+}
+.topbar a{
+color:var(--muted);
+text-decoration:none;
+}
+.topbar a:hover{
+color:var(--accent);
+}
+.actions{display:flex;gap:10px}
+.btn{
+font-size:12px;
+padding:6px 12px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+cursor:pointer;
+}
+.buffer{
+flex:1;
+padding:28px;
+overflow-y:auto;
+white-space:pre;
+font-size:14px;
+line-height:1.4;
+}
+.line{margin-bottom:4px;animation:fade .2s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.command{color:var(--accent-soft)}
+.response{color:var(--text)}
+.muted{color:var(--muted)}
+.banner{color:var(--accent)}
+.input-area{
+display:flex;
+align-items:center;
+padding:18px 28px;
+border-top:1px solid rgba(255,255,255,.05);
+}
+.prompt{color:var(--accent);margin-right:10px}
+input{
+flex:1;
+background:transparent;
+border:none;
+outline:none;
+font-family:"JetBrains Mono",monospace;
+font-size:14px;
+color:var(--text);
+}
+</style>
+</head>
+<body>
+
+<div class="terminal">
+<div class="topbar">
+<div><a href="https://ayaan.is-a.dev" target="_blank">terminal:~</a></div>
+<div class="actions">
+<div class="btn" id="themeBtn">theme</div>
+<div class="btn" id="clearBtn">clear</div>
+</div>
+</div>
+
+<div class="buffer" id="buffer"></div>
+
+<div class="input-area">
+<div class="prompt">$</div>
+<input id="input" autocomplete="off" autofocus>
+</div>
+</div>
+
+<script>
+const buffer=document.getElementById("buffer")
+const input=document.getElementById("input")
+const themeBtn=document.getElementById("themeBtn")
+const clearBtn=document.getElementById("clearBtn")
+
+const banner=`
+ █████╗ ██╗   ██╗ █████╗  █████╗ ███╗   ██╗
+██╔══██╗╚██╗ ██╔╝██╔══██╗██╔══██╗████╗  ██║
+███████║ ╚████╔╝ ███████║███████║██╔██╗ ██║
+██╔══██║  ╚██╔╝  ██╔══██║██╔══██║██║╚██╗██║
+██║  ██║   ██║   ██║  ██║██║  ██║██║ ╚████║
+╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
+`
+
+const intro=`
+Computer Programmer • Ex-CTO at the SIB • Python Enthusiast
+Type 'help' to explore.
+`
+
+function addLine(text,cls="response"){
+const div=document.createElement("div")
+div.className="line "+cls
+div.textContent=text
+buffer.appendChild(div)
+buffer.scrollTop=buffer.scrollHeight
+}
+
+function printBlock(text,cls="response"){
+text.split("\n").forEach(l=>addLine(l,cls))
+}
+
+function boot(){
+printBlock(banner,"banner")
+addLine("")
+printBlock(intro,"muted")
+addLine("")
+}
+
+boot()
+
+const commands={
+help:()=>`
+about      who I am
+projects   active builds
+skills     tech stack
+contact    reach me
+theme      toggle theme
+clear      clear screen
+`,
+about:()=>`
+Ayaan — Indie Game Developer & Full Stack Engineer.
+I build performant systems and interactive experiences.
+Clean UI. Strong architecture. Builder mindset.
+`,
+projects:()=>`
+• Python Game Engine
+• Multiplayer Systems
+• Experimental Web Tools
+• Interactive Terminal Portfolio
+`,
+skills:()=>`
+Python
+Pygame
+JavaScript
+Backend Systems
+UI/UX Engineering
+`,
+contact:()=>`
+Email: mr.dhalait@gmail.com
+`,
+theme:()=>{
+document.body.classList.toggle("light")
+localStorage.setItem("theme",document.body.classList.contains("light")?"light":"dark")
+return "Theme updated."
+},
+clear:()=>{
+buffer.innerHTML=""
+boot()
+return ""
+}
+}
+
+if(localStorage.getItem("theme")==="light")document.body.classList.add("light")
+
+let history=[]
+let index=0
+
+input.addEventListener("keydown",e=>{
+if(e.key==="Enter"){
+const value=input.value.trim()
+if(!value)return
+addLine("$ "+value,"command")
+history.push(value)
+index=history.length
+if(commands[value]){
+const result=commands[value]()
+if(result)printBlock(result)
+}else{
+addLine("Command not found. Type 'help'.","muted")
+}
+input.value=""
+}
+if(e.key==="ArrowUp"){
+if(index>0){index--;input.value=history[index]}
+}
+if(e.key==="ArrowDown"){
+if(index<history.length-1){index++;input.value=history[index]}
+else{index=history.length;input.value=""}
+}
+if(e.key==="Tab"){
+e.preventDefault()
+const val=input.value
+const match=Object.keys(commands).find(k=>k.startsWith(val))
+if(match)input.value=match
+}
+})
+
+themeBtn.onclick=()=>commands.theme()
+clearBtn.onclick=()=>commands.clear()
+</script>
+
+</body>
+</html>
