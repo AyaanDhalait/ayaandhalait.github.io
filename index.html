@@ -2,70 +2,129 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ayaan | Developer</title>
+    <title>Ayaan Dhalait</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Ayaan Dhalait is a software developer, researcher, and CTO of the Student Initiative Board. Passionate about AI, game development, and advanced computing.">
+    <meta name="author" content="Ayaan Dhalait">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ayaandhalait.github.io/">
+
+    <meta property="og:title" content="Ayaan Dhalait">
+    <meta property="og:description" content="Young software developer, researcher, and CTO of the Student Initiative Board.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://ayaandhalait.github.io/">
+    <meta property="og:image" content="https://ayaandhalait.github.io/Ayaan.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ayaan Dhalait">
+    <meta name="twitter:description" content="Young software developer, CTO, and researcher exploring advanced technologies.">
+    <meta name="twitter:image" content="https://ayaandhalait.github.io/Ayaan.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ayaan Dhalait",
+      "image": "https://ayaandhalait.github.io/Ayaan.jpg",
+      "url": "https://ayaandhalait.github.io/",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q137387342",
+        "https://github.com/AyaanDhalait",
+        "https://scholar.google.com/citations?hl=en&user=80ufeIEAAAAJ",
+        "https://ayaandhalait.itch.io/",
+        "https://www.instagram.com/ayaandhalait/",
+        "https://www.linkedin.com/in/ayaan-dhalait/",
+        "https://www.youtube.com/@AyaanDhalait",
+        "https://x.com/AyaanDhalait"
+      ],
+      "jobTitle": "Software Developer, CTO",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Student Initiative Board"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pune",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+    <script>
+    const birthDate = new Date("2012-08-30T00:00:00");
+    function AgeCounter() {
+        const now = new Date();
+        let years = now.getFullYear() - birthDate.getFullYear();
+        let lastBirthday = new Date(now.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+        if (now < lastBirthday) years--;
+        let months = now.getMonth() - birthDate.getMonth();
+        if (now.getDate() < birthDate.getDate()) months--;
+        if (months < 0) months += 12;
+        const el = document.getElementById("years-counter");
+        if (el) el.textContent = "I am " + years + "." + String(months+1) + " years old";
+    }
+    AgeCounter();
+    setInterval(AgeCounter, 60000);
+    </script>
 </head>
 <body>
-
 <div class="container">
-
     <header class="hero">
-        <div class="name">Ayaan Dhalait</div>
-        <h1>
-            I build systems.<br>
-            I ship projects.<br>
-            I improve every time.
-        </h1>
-        <p class="sub">
-            Student developer focused on games, performance, and clean execution.
-        </p>
-        <a href="/projects/" class="cta">See my projects</a>
-    </header>
+    <div class="name">Ayaan Dhalait</div>
+    <h1>
+        I make stuff that works.<br>
+        I finish projects.<br>
+        I keep getting better.
+    </h1>
+    <p class="sub">
+        hobyist Game developer, software developer, and web developer. Ex-CTO of the Student Initiative Board. I like making things that work, and learning how to make them better.
+    </p>
+    <div class="age-container">
+        <p id="years-counter" class="age-counter"></p>
+    </div>
+    <a href="/projects/" class="cta">See my projects</a>
+</header>
 
     <section class="intro">
         <p>
-            I enjoy building interactive systems and experimenting with ideas until they actually work.
-            I care about finishing projects properly and writing code that improves over time.
+            I like to just sit at my laptop and stare at vscode until I have an idea for a project. Then I just start building it, and keep building it until it's done. I don't care about making perfect code, or using the best tools. I just want to make something, anything infact.
         </p>
     </section>
 
     <section>
         <h2>What I Do</h2>
         <ul>
-            <li>Game development with Python and Pygame</li>
-            <li>Full stack web projects</li>
-            <li>Interactive experiments</li>
-            <li>Clean and focused interfaces</li>
+            <li>Game dev with Python and Pygame</li>
+            <li>Web projects</li>
+            <li>Random interactive experiments</li>
+            <li>Simple and clean interfaces</li>
         </ul>
     </section>
 
     <section>
-        <h2>Now</h2>
+        <h2>Right Now</h2>
         <p>
-            Improving performance in my projects.
-            Learning deeper system design.
-            Building things that feel complete instead of rushed.
+            Making stuff<br>
+            Learning worse ways to design systems.<br>
+            Trying to make projects.
         </p>
     </section>
 
     <section>
         <h2>Philosophy</h2>
         <p>
-            Progress beats perfection. Build it. Improve it. Repeat.
+            Do stuff > Do not do stuff.
         </p>
     </section>
-    <section>
-        <h2>Contact</h2>
-        <p>mr.dhalait@gmail.com</p>
-    </section>
+
     <footer>
-        <div class="footer-content">
-            <p>© 2026 Ayaan Dhalait. All Rights Reserved.  </p>
-        </div>
+        <p>© 2026 Ayaan Dhalait. All rights reserved.</p>
     </footer>
-
 </div>
-
 </body>
 </html>
